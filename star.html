@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Star Program</title>
+    </head>
+    <body style="text-align:center; font-size: 20px; font-style: oblique;">
+        <h1>Input</h1>
+        <form>
+            <input type="text" id="n" placeholder="No. Of Stars">
+            <button onclick="star()">Click</button>
+        </form>
+        <script>
+            function st(r,c){
+                if(r==0)
+                    return;
+                else{
+                    if(c==0)
+                        return;
+                    else{
+                        document.write('*');
+                        st(r,c-1);
+                    }
+                    r=r-1;
+                    c=r;
+                    document.write('<br/>');
+                    st(r,c);
+                    return;
+                }
+                
+            }
+            function star(){
+                var n=parseInt(document.getElementById("n").value);
+                st(n,n);
+            }
+        </script>
+    </body>
+</html>

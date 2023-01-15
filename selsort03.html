@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<script>
+    function sort() {
+        var data = document.getElementById("data").value
+        var array = data.split('#')
+        var sorted = ""
+        for (var i = 0; i < array.length - 1; ++i) {
+            var min = i
+            for (var j = i + 1; j < array.length; ++j) {
+                if (array[j] < array[min])
+                    min = j
+            }
+            var temp = array[min]
+            array[min] = array[i]
+            array[i] = temp
+        }
+        for (var i = 0; i < array.length; ++i) {
+            sorted += array[i] + "\n"
+        }
+        document.getElementById("d").innerHTML = "Sorted data: <b>" + sorted + "</b>"
+    }
+</script>
+
+<html>
+
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+</head>
+
+<body style="text-align: center;font-family: 'Sofia';font-size: 20px;">
+    <h1>Enter data:</h1>
+    <h2>Seperate with '#'</h2>
+    <input type="text" id="data" name="data" placeholder="Data">
+    <br><button onclick="sort()">Selection sort</button>
+    <br><br>
+    <p id="d">Answer</p>
+</body>
+
+</html>

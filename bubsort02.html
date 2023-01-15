@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<script>
+    function sort() {
+        var data = document.getElementById("data").value
+        var array = data.split('#')
+        var sorted = ""
+        for (var i = 0; i < array.length; ++i) {
+            for (var j = 0; j < array.length-i-1; ++j) {
+                if (array[j] > array[j + 1]) {
+                    var temp = array[j + 1]
+                    array[j + 1] = array[j]
+                    array[j] = temp
+                }
+            }
+        }
+        for (var i = 0; i < array.length; ++i){
+            sorted+=array[i]+"\n"
+        }
+        document.getElementById("d").innerHTML = "Sorted data: <b>" + sorted + "</b>"
+    }
+</script>
+
+<html>
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+</head>
+<body style="text-align: center;font-family: 'Sofia';font-size: 20px;">
+    <h1>Enter data:</h1>
+    <h2>Seperate with '#'</h2>
+    <input type="text" id="data" name="data" placeholder="Data">
+    <br><button onclick="sort()">Bubble sort</button>
+    <br><br>
+    <p id="d">Answer</p>
+</body>
+</html>

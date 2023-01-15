@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<script>
+    function f() {
+            var day = parseInt(document.getElementById("day").value);
+            var month = parseInt(document.getElementById("month").value)
+            var year = parseInt(document.getElementById("year").value)
+            var curr_date = new Date().toLocaleDateString()
+            var cyear=new Date().getFullYear()
+            document.getElementById("cdate").innerHTML = "Current date: <b>" +curr_date + "</b>"
+            document.getElementById("age").innerHTML = "The age is: <b>" + (cyear - year) + "</b>"
+        }
+</script>
+
+<html>
+    <head>
+        <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+    </head>
+    <body style="text-align: center;font-family: 'Sofia';font-size: 20px;">
+        <h2>Date:</h2>
+        <input type="text" id="day" name="day" placeholder="Day">
+        <input type="text" id="month" name="month" placeholder="Month">
+        <input type="text" id="year" name="year" placeholder="Year">
+        <br><button onclick="f()">Age</button>
+        <br><br>
+        <p id="cdate"></p>
+        <p id="age"></p>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<script>
+    function sort() {
+        var data = document.getElementById("data").value
+        var array = data.split('#')
+        var sorted = "<br>"
+        for (var i = 0; i < array.length; ++i) {
+            var key = array[i]
+            var j = i - 1
+            while ( j>=0 && array[j]>key) {
+                array[j+1]=array[j]
+                j--
+            }
+            array[j+1]=key
+        }
+        for (var i = 0; i < array.length; ++i) {
+            sorted += array[i] + "<br>"
+        }
+        document.getElementById("d").innerHTML = "Sorted data: <b>" + sorted + "</b>"
+    }
+</script>
+
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap" rel="stylesheet">
+</head>
+
+<body style="text-align: center;font-family: 'Rubik Vinyl', cursive;font-size: 20px;">
+    <h1>Enter data:</h1>
+    <h2>Seperate with '#'</h2>
+    <input type="text" id="data" name="data" placeholder="Data">
+    <br><button onclick="sort()">Selection sort</button>
+    <br><br>
+    <p id="d">Answer</p>
+</body>
+
+</html>

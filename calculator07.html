@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<script>
+    var s=0
+    var x=0
+    var y=0
+    function add(x,y) {
+        x=parseFloat(document.getElementById('x').value)
+        y=parseFloat(document.getElementById('y').value)
+        s=x+y
+        show()
+    }
+    function subtract(x,y) {
+        x=document.getElementById('x').value
+        y=document.getElementById('y').value
+        s=x-y
+        show()
+    }
+    function multiply(x,y) {
+        x=parseFloat(document.getElementById('x').value)
+        y=parseFloat(document.getElementById('y').value)
+        s=x*y
+        show()
+    }
+    function divide(x,y) {
+        x=parseFloat(document.getElementById('x').value)
+        y=parseFloat(document.getElementById('y').value)
+        s=x/y
+        show()
+    }
+    function modulo(x,y) {
+        x=parseFloat(document.getElementById('x').value)
+        y=parseFloat(document.getElementById('y').value)
+        s=x%y
+        show()
+    }
+    function show() {
+        document.getElementById('d').innerHTML=s
+    }
+</script>
+
+<html>
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+</head>
+<body style="text-align: center;font-family: 'Sofia';font-size: 20px;">
+    <h1>Calculator</h1>
+    <input type="text" id="x" name="x" placeholder="x">
+    <br><input type="text" id="y" name="y" placeholder="y">
+    <br><button onclick="add()">+</button>
+    <button onclick="subtract()">-</button>
+    <button onclick="multiply()">*</button>
+    <button onclick="divide()">/</button>
+    <button onclick="modulo()">%</button>
+    <br><br>
+    <p id="d">Answer</p>
+</body>
+</html>

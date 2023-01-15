@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<script>
+    function rev() {
+        var str=document.getElementById('data').value
+        s=str.split("").reverse().join("")
+        document.getElementById('d').innerHTML=s
+    }
+</script>
+
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap" rel="stylesheet">
+</head>
+
+<body style="text-align: center;font-family: 'Rubik Vinyl', cursive;font-size: 20px;">
+    <h1>Enter string:</h1>
+    <input type="text" id="data" name="data" placeholder="Data">
+    <br><button onclick="rev()">Reverse</button>
+    <br><br>
+    <p id="d">Answer</p>
+</body>
+
+</html>

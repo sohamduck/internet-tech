@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<script>
+    function vowel() {
+        var data = document.getElementById("data").value
+
+        var s = ""
+        for (var i = 0; i < data.length; ++i) {
+            if (data[i] == 'a' || data[i] == 'e' || data[i] == 'i' || data[i] == 'o' || data[i] == 'u' || data[i] == 'A' || data[i] == 'E' || data[i] == 'I' || data[i] == 'O' || data[i] == 'U')
+                s += "<span class='highlight'>" + data[i] + "</span>"
+            else
+                s += data[i]
+        }
+
+        console.log(data)
+        console.log(s)
+        document.getElementById("d").innerHTML = "Vowel Check: <b>" + s + "</b>"
+    }
+</script>
+
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap" rel="stylesheet">
+    <style>
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body style="text-align: center;font-family: 'Rubik Vinyl', cursive;font-size: 20px;">
+    <h1>Enter data:</h1>
+    <input type="text" id="data" name="data" placeholder="Data">
+    <br><button onclick="vowel()">Vowel</button>
+    <br><br>
+    <p id="d">Answer</p>
+</body>
+
+</html>
